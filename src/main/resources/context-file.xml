@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="customer" class="com.vtlions.homework12.model.Customer">
+		<property name="customerName" value="Mitia" />
+		<property name="cart" ref="cart" />
+	</bean>
+
+	<bean id="cart" class="com.vtlions.homework12.model.Cart">
+		<property name="maxSize" value="5" />
+		<property name="cart">
+			<map>
+				<entry key="1" value-ref="product1"/>
+				<entry key="2" value-ref="product2"/>
+				<entry key="3" value-ref="product3"/>
+				<entry key="4" value-ref="product4"/>
+				<entry key="5" value-ref="product5"/>					
+			</map>
+		</property>
+	</bean>
+
+	<bean id="product1" class="com.vtlions.homework12.model.Product">
+		<property name="productName" value="Milk" />
+		<property name="price" value="35" />
+	</bean>
+
+	<bean id="product2" class="com.vtlions.homework12.model.Product">
+		<property name="productName" value="Bread" />
+		<property name="price" value="55" />
+	</bean>
+
+	<bean id="product3" class="com.vtlions.homework12.model.Product">
+		<property name="productName" value="Water" />
+		<property name="price" value="17" />
+	</bean>
+
+	<bean id="product4" class="com.vtlions.homework12.model.Product">
+		<property name="productName" value="Apples" />
+		<property name="price" value="23" />
+	</bean>
+
+	<bean id="product5" class="com.vtlions.homework12.model.Product">
+		<property name="productName" value="Beer" />
+		<property name="price" value="70" />
+	</bean>
+
+</beans>
